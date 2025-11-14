@@ -1,23 +1,20 @@
-import "../global.css";
 import { SplashScreenController } from "@/feats/SplashScreenController";
 import { SessionProvider, useSession } from "@/providers/SessionProvider";
-import { Stack } from "expo-router";
 import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
-import { GestureHandlerRootView } from "react-native-gesture-handler";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import "../global.css";
 
 export default function Layout() {
   return (
     <GestureHandlerRootView>
       <StatusBar translucent={true} />
       <BottomSheetModalProvider>
-        <SafeAreaView style={{ flex: 1 }}>
-          <SessionProvider>
-            <SplashScreenController />
-            <RootNavigator />
-          </SessionProvider>
-        </SafeAreaView>
+        <SessionProvider>
+          <SplashScreenController />
+          <RootNavigator />
+        </SessionProvider>
       </BottomSheetModalProvider>
     </GestureHandlerRootView>
   );
@@ -29,11 +26,11 @@ function RootNavigator() {
   return (
     <Stack screenOptions={{ headerShown: false }}>
       <Stack.Protected guard={!!session}>
-        <Stack.Screen name="(auth)/index" />
+        <Stack.Screen name="(auth)" />
       </Stack.Protected>
 
       <Stack.Protected guard={!session}>
-        <Stack.Screen name="(public)/login" />
+        <Stack.Screen name="(public)/onboarding" />
       </Stack.Protected>
     </Stack>
   );
