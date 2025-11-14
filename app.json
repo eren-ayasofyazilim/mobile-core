@@ -2,17 +2,23 @@
   "scheme": "acme",
   "userInterfaceStyle": "automatic",
   "orientation": "default",
-  "web": {
-    "output": "static"
-  },
   "plugins": [
+    "expo-router",
     [
-      "expo-router",
+      "expo-splash-screen",
       {
-        "origin": "https://n"
+        "backgroundColor": "#232323",
+        "image": "./assets/splash.png",
+        "imageWidth": 200
       }
-    ]
+    ],
+
+    "expo-localization",
+    "expo-secure-store"
   ],
   "name": "mobile-core",
-  "slug": "mobile-core"
+  "slug": "mobile-core",
+  "android": {
+    "package": "com.eren.odaci.mobilecore"
+  }
 }
