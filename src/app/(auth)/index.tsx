@@ -1,4 +1,5 @@
 import { useSession } from "@/providers/SessionProvider";
+import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { Text, View } from "react-native";
 
@@ -15,11 +16,8 @@ function Content() {
 
   return (
     <View className="flex-1">
-      <Text
-        role="heading"
-        className="text-3xl text-center native:text-5xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl"
-      >
-        Welcome to Project ACME {session ? `(Session: ${session})` : ""}
+      <Text className="font-bold text-4xl">
+        Welcome {session ? `(Session: ${session})` : ""}
       </Text>
     </View>
   );

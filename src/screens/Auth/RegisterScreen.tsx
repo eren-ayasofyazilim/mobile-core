@@ -2,7 +2,7 @@ import { useSession } from "@/providers/SessionProvider";
 import { router } from "expo-router";
 import { Text, View } from "react-native";
 
-export function LoginScreen() {
+export function RegisterScreen() {
   const { signIn } = useSession();
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
@@ -13,7 +13,7 @@ export function LoginScreen() {
           router.replace("/");
         }}
       >
-        Login
+        Register
       </Text>
     </View>
   );

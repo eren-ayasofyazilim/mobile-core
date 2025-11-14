@@ -9,8 +9,7 @@ import { StatusBar } from "expo-status-bar";
 
 export default function Layout() {
   return (
-    <GestureHandlerRootView // style={styles.container}
-    >
+    <GestureHandlerRootView>
       <StatusBar translucent={true} />
       <BottomSheetModalProvider>
         <SafeAreaView style={{ flex: 1 }}>
