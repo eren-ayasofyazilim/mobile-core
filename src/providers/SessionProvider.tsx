@@ -41,7 +41,6 @@ export function SessionProvider({ children }: PropsWithChildren) {
         isLoading,
       }}
     >
-      <SplashScreenController />
       {children}
     </AuthContext.Provider>
   );
