@@ -1,7 +1,6 @@
-import { Link } from "expo-router";
+import { useSession } from "@/providers/SessionProvider";
 import React from "react";
 import { Text, View } from "react-native";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function Page() {
   return (
@@ -12,6 +11,8 @@ export default function Page() {
 }
 
 function Content() {
+  const { session } = useSession();
+
   return (
     <View className="flex-1">
       <View className="py-12 md:py-24 lg:py-32 xl:py-48">
@@ -21,7 +22,7 @@ function Content() {
               role="heading"
               className="text-3xl text-center native:text-5xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl"
             >
-              Welcome to Project ACME
+              Welcome to Project ACME {session ? `(Session: ${session})` : ""}
             </Text>
             <Text className="mx-auto max-w-[700px] text-lg text-center text-gray-500 md:text-xl dark:text-gray-400">
               Discover and collaborate on acme. Explore our services now...

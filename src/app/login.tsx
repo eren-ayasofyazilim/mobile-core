@@ -1,8 +1,5 @@
-import { LoginScreen } from "@/screens/Auth/Login";
-import { Link } from "expo-router";
+import { LoginScreen } from "@/screens/Auth/LoginScreen";
 import React from "react";
-import { Text, View } from "react-native";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function Page() {
   return <LoginScreen />;
