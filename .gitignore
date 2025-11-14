@@ -19,4 +19,5 @@ expo-env.d.ts
 *.key
 *.mobileprovision
 
- .hidden-items.json
+
+.hidden-items.json
